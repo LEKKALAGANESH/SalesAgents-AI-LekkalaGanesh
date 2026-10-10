@@ -58,7 +58,7 @@ class QualificationEngineTests(unittest.TestCase):
         self.assertEqual(state.terminal_outcome, "QUALIFIED_FOR_EXPERT_FOLLOWUP")
 
     def test_over_cap_requires_explicit_acceptance(self):
-        state = self.turn({"loan_amount": 9_000_000})
+        state = self.turn(eligible_facts(loan_amount=9_000_000))
         self.assertTrue(state.awaiting_maximum_acceptance)
         self.assertIsNone(state.terminal_outcome)
         state = self.turn(accept_maximum=True)
