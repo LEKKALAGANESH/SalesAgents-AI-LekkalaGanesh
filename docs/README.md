@@ -14,7 +14,12 @@ This directory is the source of truth for the SalesAgents AI voice-agent assignm
 | [Conversation Design](design.md) | Call states, dialog behavior, voice and diversion rules |
 | [Testing Plan](testing.md) | Happy paths, failures, edge cases, adversarial scenarios |
 | [System Prompt Guide](system-prompt.md) | Prompt structure, variables, guardrails, state-management algorithm |
+| [Prompt Review Results](prompt-review-results.md) | Static scenario review and outstanding live-test requirements |
 | [Submission Checklist](submission-checklist.md) | Required artifacts and final verification |
+
+## Deployable prompt
+
+The current draft is at [`../system-prompt.txt`](../system-prompt.txt). It is written as a platform-neutral prompt template; replace or map placeholders to the syntax supported by the selected voice platform before deployment.
 
 ## Project status
 
