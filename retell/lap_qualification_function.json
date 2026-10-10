@@ -4,7 +4,7 @@
   "url": "https://REPLACE-WITH-YOUR-DEPLOYED-API/retell/lap-qualification",
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {{RETELL_WEBHOOK_SECRET}}"
+    "Authorization": "Bearer REPLACE_WITH_SECRET_IN_RETELL_DASHBOARD"
   },
   "parameters": {
     "type": "object",
