@@ -23,10 +23,10 @@ The current draft is at [`../system-prompt.txt`](../system-prompt.txt). It is wr
 
 ## Project status
 
-- **Status:** Documentation and assignment planning.
-- **Implementation status:** Not assessed. The repository was empty when this documentation set was initialized.
+- **Status:** Prompt and documentation plus a deterministic Python qualification API prototype.
+- **Implementation status:** Qualification engine, HTTP endpoints, unit-test suite, Dockerfile, and CI workflow have been added on the feature branch. Live test execution and platform integration remain unverified.
 - **Target use case:** Preliminary qualification for a fresh Loan Against Property offer.
-- **Voice platform:** To be selected (the assignment permits Retell AI, Bolna, or a similar platform).
+- **Voice platform:** Retell AI selected for planned setup; no deployed/verified Retell integration is claimed.
 
 ## Normative source
 
