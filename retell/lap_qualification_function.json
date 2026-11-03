@@ -1,0 +1,108 @@
+{
+  "name": "lap_qualification",
+  "description": "Submit verified customer status, explicit eligibility facts, or a routing signal to the deterministic LAP qualification API. Only send facts that the customer clearly stated. Omit unknown or ambiguous fields. After calling this function, follow the returned action and message. Do not claim loan approval.",
+  "url": "https://REPLACE-WITH-YOUR-DEPLOYED-API/retell/lap-qualification",
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer REPLACE_WITH_SECRET_IN_RETELL_DASHBOARD"
+  },
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "session_id": {
+        "type": "string",
+        "description": "Stable conversation ID. Use the Retell call ID if available."
+      },
+      "customer_verified": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "True only after the intended customer confirms identity; false if wrong person; otherwise null."
+      },
+      "facts": {
+        "type": "object",
+        "description": "Only clear facts explicitly stated by the customer.",
+        "properties": {
+          "customer_verified": {
+            "type": "boolean"
+          },
+          "property_type": {
+            "type": "string",
+            "enum": [
+              "residential",
+              "commercial",
+              "industrial",
+              "agricultural"
+            ]
+          },
+          "ownership_status": {
+            "type": "string",
+            "enum": [
+              "sole",
+              "joint"
+            ]
+          },
+          "documents_available": {
+            "type": "boolean"
+          },
+          "loan_amount": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Requested amount in whole INR."
+          },
+          "occupation": {
+            "type": "string",
+            "enum": [
+              "salaried",
+              "self-employed"
+            ]
+          },
+          "income_mode": {
+            "type": "string",
+            "enum": [
+              "bank",
+              "cash"
+            ]
+          },
+          "market_value": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Estimated market value in whole INR."
+          },
+          "tenure_years": {
+            "type": "integer"
+          }
+        }
+      },
+      "customer_busy": {
+        "type": "boolean"
+      },
+      "callback_time": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "existing_property_loan": {
+        "type": "boolean"
+      },
+      "emi_reduction_request": {
+        "type": "boolean"
+      },
+      "accept_maximum": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "Explicit response to proceeding with ₹75 lakh after requesting more."
+      },
+      "customer_declines": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "facts"
+    ]
+  }
+}
